@@ -35,11 +35,10 @@ noble.on 'discover', (peripheral) ->
             tx.write new Buffer msg, 'utf-8'
           , 1000
 
-          on_exit = ->
-            peripheral.disconnect ->
-              process.exit 0
+          for signal in ['SIGINT', 'SIGHUP', 'SIGTERM']
+            process.on signal, ->
+              peripheral.disconnect ->
+                process.exit 1
 
-          process.on 'SIGINT', on_exit
-          process.on 'SIGHUP', on_exit
 
 noble.startScanning()
