@@ -9,9 +9,10 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
-    "ble-firmata": "0.0.1",
-    "coffee-script": "^1.7.1",
-    "lodash": "^2.4.1",
+    "ble-firmata": "0.1.1",
+    "blendmicro": "0.0.5",
+    "coffee-script": "*",
+    "lodash": "*",
     "noble": "^0.3.1"
   }
 }
